@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/style.css" />
+    <title>Kickzoid - DNA das ruas</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <!-- Logo à esquerda -->
+        <div class="logo" style="display: flex; align-items: center; gap: 8px">
+          <a
+            href="#"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              text-decoration: none;
+            "
+          >
+            <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" />
+            <span style="font-weight: bold">KickZoid</span>
+          </a>
+        </div>
+
+        <!-- Links no centro -->
+        <div class="nav-links" id="nav-links" style="display: flex; gap: 24px">
+          <a href="#">Home</a>
+          <a href="#">Company</a>
+          <a href="#">Marketplace</a>
+          <a href="#">Features</a>
+          <a href="#">Team</a>
+        </div>
+
+        <!-- Campo de busca e ícones à direita -->
+        <div
+          class="nav-actions"
+          style="display: flex; align-items: center; gap: 16px"
+        >
+          <!-- Campo de busca com lupa -->
+          <div style="position: relative">
+            <input
+              type="search"
+              placeholder="Buscar..."
+              style="
+                padding: 6px 8px 6px 28px;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+              "
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="black"
+              viewBox="0 0 24 24"
+              style="
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+              "
+            >
+              <path
+                d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"
+              />
+            </svg>
+          </div>
+
+          <!-- Ícone de coração -->
+          <a href="#" title="Favoritos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="black"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+        2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 
+        4.5 2.09C13.09 3.81 14.76 3 16.5 3 
+        19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+        6.86-8.55 11.54L12 21.35z"
+              />
+            </svg>
+          </a>
+
+          <!-- Ícone de bolsa -->
+          <a href="#" title="Carrinho">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="black"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 18c-1.1 0-1.99.9-1.99 
+        2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 
+        0c-1.1 0-1.99.9-1.99 
+        2s.89 2 1.99 2 2-.9 
+        2-2-.9-2-2-2zM7.16 
+        14h9.69c.75 0 
+        1.41-.41 1.75-1.03l3.58-6.49a1 
+        1 0 0 0-.87-1.48H5.21L4.27 
+        2H1v2h2l3.6 7.59-1.35 
+        2.45C4.52 14.37 5.48 16 
+        7.16 16z"
+              />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-slide">
+          <img
+            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+            alt="Slide 1"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+            alt="Slide 2"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+            alt="Slide 3"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+            alt="Slide 4"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+            alt="Slide 5"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="carousel-buttons">
+        <button class="carousel-button" onclick="prevSlide()">‹</button>
+        <button class="carousel-button" onclick="nextSlide()">›</button>
+      </div> -->
+
+      <div class="indicators" id="indicators">
+        <!-- JS irá preencher as bolinhas aqui -->
+      </div>
+    </div>
+
+    <h2 style="text-align: center; padding: 50px">
+      O que você está procurando?
+    </h2>
+
+    <div class="dot-container">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("active");
+      }
+
+      const track = document.getElementById("carousel-track");
+      const totalSlides = track.children.length;
+      const indicatorsContainer = document.getElementById("indicators");
+
+      let currentSlide = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll(".indicator").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      // Criar os indicadores dinamicamente
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("button");
+        dot.classList.add("indicator");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          currentSlide = i;
+          updateCarousel();
+        });
+        indicatorsContainer.appendChild(dot);
+      }
+
+      // Auto-slide opcional (a cada 5s)
+      setInterval(nextSlide, 5000);
+    </script>
+  </body>
+</html>
