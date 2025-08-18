@@ -274,7 +274,24 @@ header {
   transition: color 0.2s;
 }
 
-.sidebar-nav a:hover {
+.sidebar-nav-little {
+  padding: 20px;
+}
+
+.sidebar-nav-little a{
+  display: block;
+  text-decoration: none;
+  font-weight: 200;
+  color: #374151;
+  padding: 12px 0;
+  font-weight: 200;
+  border-bottom: 1px solid #f3f4f6;
+  transition: color 0.2s;
+}
+
+
+.sidebar-nav a:hover,
+.sidebar-nav-little a:hover {
   color: var(--cor-destaque);
 }
 
@@ -466,7 +483,7 @@ header {
     overflow-x: auto;
     overflow-y: hidden;
     margin: 0 -20px;
-    padding-left: 50px;
+    padding-left: 60px;
     padding-right: 40px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -583,12 +600,72 @@ header {
   width: 170px;
 }
 
+.linkMais {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+  text-align: right;
+  margin-top: 200px; 
+  margin-left: 1200px;  
+  color: black;
+}
+
 @media (max-width: 768px) {
   .title-product {
     margin-left: 40px;
-    padding: 5px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    width: 120px;
+    height: 30px;
+  }
+
+  .linkMais {
+    margin-left: 320px;
+    font-size: 1.0rem;
+    margin-top: 10px;
   }
 }
+
+/* Procut part SNK */
+.gallery {
+  margin-left: 200px;
+  margin-top: 20px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    margin-left: 40px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.heart-icon img {
+  width: 15px;
+  height: 15px;
+}
+
 
 /* Cards */
 .product-card {
