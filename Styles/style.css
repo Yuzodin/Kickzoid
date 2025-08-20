@@ -174,7 +174,6 @@ header {
 
 .nav-links a:hover {
   color: var(--cor-destaque);
-  background-color: #eff6ff;
 }
 
 .desktop-search {
