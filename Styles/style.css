@@ -667,6 +667,7 @@ header {
 
 .image-container {
   position: relative;
+  box-shadow: 0 2px 5px #dfdfdf;
 }
 
 .image-container img {
@@ -998,6 +999,7 @@ header {
   background: var(--cor-fundo);
   color: #1a1f71;
 }
+
 .amex {
   background: #006fcf;
   color: white;
@@ -1021,7 +1023,6 @@ header {
 .paypal img {
   width: 30px;
   height: auto;
-  
 }
 
 .discover {
@@ -1134,15 +1135,33 @@ header {
     grid-column: 1 / -1;
     margin-top: 40px;
   }
+  
+  /* Esconde os dropdowns no desktop */
+  .dropdown {
+    display: none;
+  }
+  
+  .desktop-section {
+    display: block;
+  }
 }
 
 /* Mobile Layout */
 @media (max-width: 767px) {
-  .desktop-section {
+  /* Esconde apenas as seções desktop de Geral, Ajuda e a com payment-section */
+  .desktop-section:not(.sobre-section):not(.social-payment-section) {
     display: none;
   }
-
-  .dropdown {
+  
+  /* Mostra apenas os dropdowns para Ajuda e Sobre */
+  .dropdown.ajuda-dropdown,
+  .dropdown.sobre-dropdown {
+    display: block;
+  }
+  
+  /* Mantém visível a seção Geral e Social/Payment */
+  .footer-section.geral-section,
+  .footer-section.social-payment-section {
     display: block;
   }
 
