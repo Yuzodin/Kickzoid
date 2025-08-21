@@ -835,7 +835,7 @@ header {
 
 @media (max-width: 768px) {
   .product-card {
-    width: 100%;
+    width: 160px;
     height: auto; /* Remove altura fixa no mobile */
     margin: 0 auto;
   }
@@ -897,7 +897,6 @@ header {
 }
 
 /* Footer */
-
 .footer {
   background-color: var(--cor-texto);
   color: var(--cor-fundo);
