@@ -328,24 +328,41 @@ header {
   }
 }
 
-/* DESKTOP STYLES */
-@media (min-width: 769px) {
-  .top-bar {
-    height: 80px;
-  }
-
-  .header-container {
-    padding: 0 24px;
-  }
-
-  .hamburger-menu {
+/* TABLET STYLES */
+@media (max-width: 1024px) and (min-width: 768px) {
+ .nav-links {
     display: none;
   }
 
-  .header-actions {
-    gap: 20px;
+  .desktop-search {
+    display: none;
+  }
+
+  .search-container {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: -50px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
   }
 }
+
+
 
 /* CAROUSEL */
 /* .carousel-inner{
@@ -416,14 +433,6 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* .section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: vcar(--cor-texto);
-  margin-bottom: 40px;
-} */
 
 /* DESKTOP LAYOUT */
 .dot-container {
@@ -564,16 +573,70 @@ header {
 /* TABLET LAYOUT */
 @media (max-width: 1024px) and (min-width: 769px) {
   .dot-container {
-    gap: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 -20px;
+    padding-left: 80px;
+    padding-right: 40px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* Ocultar scrollbar em Webkit */
+  .dot-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dot-item {
+    flex-shrink: 0;
+    min-width: 120px;
   }
 
   .dot {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
   }
 
   .dot-subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--cor-texto);
+    /* text-align: left; */
+    margin-right: 40px;
+    transform: rotate(-2deg);
+    text-decoration: none;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  @keyframes slideLeft {
+    0%,
+    50% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-3px);
+    }
+  }
+
+  @keyframes slideRight {
+    0%,
+    50% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(3px);
+    }
   }
 }
 
@@ -643,6 +706,22 @@ header {
   }
 }
 
+@media (max-width: 1024px) and (min-width: 769px){
+  .title-product {
+    margin-left: 60px;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    width: 140px;
+    height: 35px;
+  }
+
+  .linkMais {
+    margin-left: 600px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
 /* Procut part SNK */
 .gallery {
   margin-left: 200px;
@@ -661,6 +740,21 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 }  
+
+@media (max-width: 1024px) and (min-width: 769px){
+  .gallery {
+    margin-left: 60px;
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .linkMais {
+    margin-left: 700px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
 
 /* cards */
 
@@ -867,6 +961,39 @@ header {
   .product-catagory {
     font-size: 0.9rem;
     height: auto; /* Remove altura fixa no mobile */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px){
+  .product-card {
+    width: 170px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .product-row {
+    width: 80%;
+    margin-left: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .product-tumb {
+    height: 220px; /* Altura menor no tablet */
+  }
+
+  .product-details {
+    padding: 15px;
+  }
+
+  .product-bottom-details {
+    padding-top: 10px;
+  }
+
+  .product-catagory {
+    font-size: 1rem;
+    height: auto; /* Remove altura fixa no tablet */
   }
 }
 
