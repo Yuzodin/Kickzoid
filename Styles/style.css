@@ -733,6 +733,10 @@ header {
   align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
 }
 
+.product-row a{
+  text-decoration: none;
+}
+
 .badge {
   position: absolute;
   left: 0;

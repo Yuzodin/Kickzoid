@@ -273,6 +273,44 @@
   background: #333;
 }
 
+.color-orange {
+  background: #f25c05;
+}
+
+.color-brown{
+  background: #D6C194;
+}
+
+.color-red {
+  background: #ff0000;
+}
+
+.color-yellow {
+  background: #ffeb3b;
+}
+
+
+.color-option.active {
+  border-color: #000;
+}
+
+.color-option.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.color-option.disabled::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 110%;
+  height: 2px;
+  background-color: var(--text-color);
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
 /* Size Selection */
 .size-section {
   margin-bottom: 30px;
@@ -303,6 +341,13 @@
   background: #333;
   color: white;
   border-color: #333;
+}
+
+.size-option.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #ccc;
+  border-color: #eee;
 }
 
 /* Add to Cart */
