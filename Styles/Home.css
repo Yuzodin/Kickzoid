@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+:root {
+  --orange: #F25C05;
+  --dark: #000;
+  --light: #f5f5f5;
+  --white: #fff;
+  --sideebar: #F7F7F7
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Header fixo que aparece ao rolar */
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+} 
+
+.header {
+  position: fixed;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  background-color: var(--sideebar);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: top 0.5s ease;
+  padding: 15px 0;
+}
+
+.header.visible {
+  top: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+/* 🔹 Garantir simetria visual */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* 🔹 Igualar proporções esquerda/direita */
+.header-container > .nav-links:first-child {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.header-container > .nav-links:last-child {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+/* 🔹 Centralizar a logo */
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  height: 85px;
+}
+
+/* 🔹 Estilo dos links */
+.nav-links a {
+    /* font-family: "Poppins", sans-serif; */
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 200;
+  font-size: 17px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+/* 🔹 Ícones */
+.nav-links .material-symbols-outlined {
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+
+/* Banner principal */
+.banner {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../Imagens/Home\ Banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.banner-logo img {
+  width: 800px;
+  transition: transform 0.5s ease;
+}
+
+.banner-subtitle {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Marquee/letreiro de Black Friday */
+.marquee {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Seções do site */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Grid de produtos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  color: var(--orange);
+  font-weight: bold;
+}
+
+/* Depoimentos */
+.testimonial {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+/* Rodapé */
+.footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.newsletter {
+  margin-top: 20px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.social-payment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .banner-logo img {
+    width: 400px;
+  }
+
+  .banner-subtitle {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  @keyframes marquee {
+  10% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+}
