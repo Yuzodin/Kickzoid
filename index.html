@@ -39,51 +39,40 @@
     <title>Kickzoid - DNA das ruas</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <nav class="nav-links">
-          <a href="#lancamentos">Masculino</a>
-          <a href="#colecao">Feminino</a>
-          <a href="#depoimentos">Infantil</a>
-          <a href="#Sneakers">Sneakers</a>
-          <a href="#promocoes">Promoções</a>
-        </nav>
-        <div class="logo"><img src="Imagens/Logo laranja.svg" alt="" /></div>
-        <nav class="nav-links">
-          <a href="#lancamentos"
-            ><span class="material-symbols-outlined"> person </span></a
-          >
-          <a href="#colecao"
-            ><span class="material-symbols-outlined"> local_mall </span></a
-          >
-          <a href="#depoimentos"
-            ><span class="material-symbols-outlined"> favorite </span></a
-          >
-          <a href="#promocoes"
-            ><span class="material-symbols-outlined"> search </span></a
-          >
-        </nav>
-      </div>
-    </header>
+   <!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+    <nav class="nav-links">
+      <a href="#lancamentos">Masculino</a>
+      <a href="#colecao">Feminino</a>
+      <a href="#depoimentos">Infantil</a>
+      <a href="#Sneakers">Sneakers</a>
+      <a href="#promocoes">Promoções</a>
+    </nav>
+    <div class="logo header-logo"><img src="Imagens/Logo laranja.svg" alt="" /></div>
+    <nav class="nav-links">
+      <a href="#lancamentos"><img src="Imagens/User.svg" alt=""></a>
+      <a href="#colecao"><img src="Imagens/Bag cart.svg" alt=""></a>
+      <a href="#depoimentos"><img src="Imagens/heart icon.svg" alt=""></a>
+      <a href="#promocoes"><img src="Imagens/search.svg" alt=""></a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Banner principal -->
-    <section class="banner">
-      <div class="banner-logo">
-        <img src="Imagens/Logo laranja.svg" alt="" />
-      </div>
-      <!-- <div class="banner-subtitle"></div> -->
+<section class="banner">
+  <div class="banner-logo">
+    <img src="Imagens/Logo laranja.svg" alt="" />
+  </div>
+  <!-- Letreiro Black Friday -->
+  <div class="marquee">
+    <div class="marquee-content">
+      COMEGOU A BLACK FRIDAY - Até 60% OFF no seu novo vestuário e frete grátis &nbsp;&nbsp;&nbsp;&nbsp;
+      COMEGOU A BLACK FRIDAY - Até 60% OFF no seu novo vestuário e frete grátis &nbsp;&nbsp;&nbsp;&nbsp;
+      COMEGOU A BLACK FRIDAY - Até 60% OFF no seu novo vestuário e frete grátis &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+</section>
 
-      <!-- Letreiro Black Friday -->
-      <div class="marquee">
-        <div class="marquee-content">
-          COMEGOU A BLACK FRIDAY - Até 60% OFF no seu novo vestuário e frete
-          grátis &nbsp;&nbsp;&nbsp;&nbsp; COMEGOU A BLACK FRIDAY - Até 60% OFF
-          no seu novo vestuário e frete grátis &nbsp;&nbsp;&nbsp;&nbsp; COMEGOU
-          A BLACK FRIDAY - Até 60% OFF no seu novo vestuário e frete grátis
-          &nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-      </div>
-    </section>
 
     <!-- Seção Lançamentos -->
     <section class="section" id="lancamentos">
@@ -280,19 +269,21 @@
 
     <script>
       // Controle do header que aparece ao rolar
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".header");
-        const bannerLogo = document.querySelector(".banner-logo");
-        const scrollPosition = window.scrollY;
+  const header = document.querySelector('.header');
+  const bannerLogo = document.querySelector('.banner-logo');
+  const headerLogo = document.querySelector('.logo img');
 
-        if (scrollPosition > 100) {
-          header.classList.add("visible");
-          bannerLogo.style.transform = "translateY(-50px)";
-        } else {
-          header.classList.remove("visible");
-          bannerLogo.style.transform = "translateY(0)";
-        }
-      });
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 100) {
+      header.classList.add('visible');
+      bannerLogo.classList.add('shrink');
+    } else {
+      header.classList.remove('visible');
+      bannerLogo.classList.remove('shrink');
+    }
+  });
 
       const hamburgerButton = document.querySelector(".hamburger-button");
       const hamburgerMenu = document.querySelector(".hamburger-menu");

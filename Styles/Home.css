@@ -18,13 +18,7 @@ body {
   color: var(--dark);
 }
 
-/* Header fixo que aparece ao rolar */
-.nav-links a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-} 
-
+/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: -120px;
@@ -33,7 +27,7 @@ body {
   background-color: var(--sideebar);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: top 0.5s ease;
+  transition: top 0.6s ease;
   padding: 15px 0;
 }
 
@@ -51,14 +45,12 @@ body {
   gap: 40px;
 }
 
-/* 🔹 Garantir simetria visual */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 25px;
 }
 
-/* 🔹 Igualar proporções esquerda/direita */
 .header-container > .nav-links:first-child {
   flex: 1;
   justify-content: flex-end;
@@ -69,7 +61,6 @@ body {
   justify-content: flex-start;
 }
 
-/* 🔹 Centralizar a logo */
 .logo {
   flex-shrink: 0;
   display: flex;
@@ -78,11 +69,10 @@ body {
 
 .logo img {
   height: 85px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* 🔹 Estilo dos links */
 .nav-links a {
-    /* font-family: "Poppins", sans-serif; */
   text-decoration: none;
   color: var(--dark);
   font-weight: 200;
@@ -91,17 +81,20 @@ body {
 }
 
 .nav-links a:hover {
-  color: var(--orange);
+  transform: scale(1.1);
+  color: var(--dark);
 }
 
-/* 🔹 Ícones */
+.nav-links img:hover {
+  transform: scale(1.1);
+} 
+
 .nav-links .material-symbols-outlined {
   font-size: 25px;
   vertical-align: middle;
 }
 
-
-/* Banner principal */
+/* ===== BANNER ===== */
 .banner {
   position: relative;
   height: 100vh;
@@ -109,24 +102,32 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../Imagens/Home\ Banner.jpg');
+  background-image: url('../Imagens/Home Banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--white);
   text-align: center;
-  padding: 0 20px;
   overflow: hidden;
+}
+
+.banner-logo {
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .banner-logo img {
   width: 800px;
-  transition: transform 0.5s ease;
 }
 
-.banner-subtitle {
-  font-size: 24px;
-  margin-bottom: 30px;
+/* ===== ANIMAÇÃO NA ROLAGEM ===== */
+.banner-logo.shrink {
+  transform: translateY(-350px) scale(0.2);
+  opacity: 0;
+}
+
+.logo img.shrink {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* Marquee/letreiro de Black Friday */
@@ -167,53 +168,18 @@ body {
 }
 
 .section-title {
-  font-size: 32px;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--light);
+  background-color: var(--dark);
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 42px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 /* Grid de produtos */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
 
-.product-card {
-  background-color: var(--white);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-image {
-  height: 200px;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-}
-
-.product-info {
-  padding: 15px;
-}
-
-.product-name {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.product-price {
-  color: var(--orange);
-  font-weight: bold;
-}
 
 /* Depoimentos */
 .testimonial {
